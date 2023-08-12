@@ -21,7 +21,7 @@ public class GhostVisionController : MonoBehaviour
 
     void Update()
     {
-        //ReduceVisionPoints();
+        ReduceVisionPoints();
     }
 
     private void ReduceVisionPoints()
@@ -33,6 +33,9 @@ public class GhostVisionController : MonoBehaviour
             if (ghostVision < 0)
             {
                 ghostVision = 0;
+                ghostVisionStatus = false;
+
+                SwitchGhostLayer(ghostVisionStatus);
             }
             Debug.Log($"Ghost vision: {ghostVision}");
         }
