@@ -2,9 +2,7 @@ using UnityEngine;
 
 public class GhostVisionController : MonoBehaviour
 {
-    [SerializeField]
     Camera playerCamera;
-    [SerializeField] LayerMask ghostLayer;
 
     float maxGhostVision = 100f;
     float ghostVision;
@@ -12,7 +10,20 @@ public class GhostVisionController : MonoBehaviour
     [SerializeField]
     float ghostVisionReduceRate = 10f;
 
+    [SerializeField]
+    float ghostVisionRecoveryDelay = 2f;
+
+    [SerializeField]
+    float ghostVisionRecoveryRate = 5f;
+
+    float timer;
+
     bool ghostVisionStatus;
+
+    void Awake()
+    {
+        playerCamera = GetComponent<Camera>();
+    }
 
     void Start()
     {
@@ -22,6 +33,36 @@ public class GhostVisionController : MonoBehaviour
     void Update()
     {
         ReduceVisionPoints();
+        HandleVisionRecharge();
+    }
+
+    private void HandleVisionRecharge()
+    {
+        if (!ghostVisionStatus)
+        {
+            timer += Time.deltaTime;
+
+            if (timer > ghostVisionRecoveryDelay)
+            {
+                timer = ghostVisionRecoveryDelay;
+                VisionRecharge();
+            }
+        }
+        else
+        {
+            timer = 0;
+            return;
+        }
+    }
+
+    private void VisionRecharge()
+    {
+        ghostVision += Time.deltaTime * ghostVisionRecoveryRate;
+
+        if (ghostVision > maxGhostVision)
+        {
+            ghostVision = maxGhostVision;
+        }
     }
 
     private void ReduceVisionPoints()
