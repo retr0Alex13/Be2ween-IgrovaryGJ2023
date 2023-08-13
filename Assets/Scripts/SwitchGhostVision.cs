@@ -46,9 +46,5 @@ public class SwitchGhostVision : MonoBehaviour
             ghostVision.SwitchVision(false);
             isButtonPressed = false;
         }
-        Debug.Log(value.isPressed);
     }
-
-    //TODO:
-    //Плавно проявляти містичні об'єкти
 }
