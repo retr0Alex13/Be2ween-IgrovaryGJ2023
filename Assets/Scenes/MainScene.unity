@@ -1319,7 +1319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ghostVision: {fileID: 4719069972867531449}
-  visionSwitchDelay: 1
+  timeToActivateVision: 1
 --- !u!114 &827922820643054095 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
@@ -1536,9 +1536,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6992d6ee11cdce1418cdfc5391d5c0f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghostVisionReduceRate: 30
-  ghostVisionRecoveryDelay: 1
-  ghostVisionRecoveryRate: 10
 --- !u!1001 &4730419623540588433
 PrefabInstance:
   m_ObjectHideFlags: 0
