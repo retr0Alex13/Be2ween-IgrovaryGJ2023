@@ -104,18 +104,18 @@ Material:
     m_Floats:
     - Bottom_Cutout: 0
     - Bottom_Cutout_Smoothness: 0
-    - Fresnel_Intensity: 1.4
+    - Fresnel_Intensity: 3
     - Noise_Intensity: 1.15
     - Noise_Invert: 0
     - Noise_Tiling: 1
-    - Noise_Vertical_Mask: 0
-    - Noise_Vertical_Mask_Smoothness: 0
+    - Noise_Vertical_Mask: 0.152
+    - Noise_Vertical_Mask_Smoothness: 0.248
     - Tint_Intensity: 1
     - Transparency_Intensity: 1
-    - Triplanar_Blend_Sharpness: 2
+    - Triplanar_Blend_Sharpness: 1.95
     - Use_Albedo_Map_Alpha: 0
-    - Vertical_Transparency_Control: 0
-    - Vertical_Transparency_Smoothness: 0
+    - Vertical_Transparency_Control: 0.037
+    - Vertical_Transparency_Smoothness: 0.203
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
@@ -149,9 +149,9 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Fresnel_Color: {r: 2, g: 2, b: 2, a: 0}
-    - Noise_Emission_Color: {r: 2, g: 2, b: 2, a: 0}
-    - Noise_XY_Offset_Direction: {r: 0, g: 0.1, b: 0, a: 0}
-    - Noise_YZ_Offset_Direction: {r: 0, g: 0.1, b: 0, a: 0}
+    - Noise_Emission_Color: {r: 0.901829, g: 0, b: 2.6701574, a: 0}
+    - Noise_XY_Offset_Direction: {r: 1, g: 0.1, b: 0, a: 0}
+    - Noise_YZ_Offset_Direction: {r: 1, g: 0.1, b: 0, a: 0}
     - Tint_Color: {r: 1, g: 1, b: 1, a: 0}
     - _BaseColor: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 1}
     - _Color: {r: 0.57547164, g: 0.57547164, b: 0.57547164, a: 1}
