@@ -6,45 +6,40 @@ public class SwitchGhostVision : MonoBehaviour
     [SerializeField]
     GhostVisionController ghostVision;
 
+    CharacterController characterController;
+
     [SerializeField]
-    float visionSwitchDelay = 1f;
+    float timeToActivateVision = 1f;
     float timer;
 
-    bool isButtonPressed;
+    bool isStandignStill;
+
+    void Awake()
+    {
+        characterController = GetComponent<CharacterController>();
+    }
 
     void Update()
     {
-        SwitchVisionDelay();
+        HandleGhostVision();
     }
 
-    private void SwitchVisionDelay()
+    private void HandleGhostVision()
     {
-        if (!isButtonPressed)
+        if (characterController.velocity.magnitude == 0)
         {
             timer += Time.deltaTime;
 
-            if (timer > visionSwitchDelay)
+            if (timer > timeToActivateVision)
             {
-                timer = visionSwitchDelay;
+                timer = timeToActivateVision;
+                ghostVision.SwitchGhostVision(true);
             }
         }
         else
         {
             timer = 0;
-        }
-    }
-
-    public void OnGhostVision(InputValue value)
-    {
-        if (value.isPressed && timer == visionSwitchDelay)
-        {
-            ghostVision.SwitchVision(true);
-            isButtonPressed = true;
-        }
-        else
-        {
-            ghostVision.SwitchVision(false);
-            isButtonPressed = false;
+            ghostVision.SwitchGhostVision(false);
         }
     }
 }

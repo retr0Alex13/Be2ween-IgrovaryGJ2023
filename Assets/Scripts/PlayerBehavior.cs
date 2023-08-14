@@ -2,6 +2,7 @@ using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehavior : MonoBehaviour
 {
@@ -14,7 +15,8 @@ public class PlayerBehavior : MonoBehaviour
     public void KillPLayer()
     {
         DisablePlayerControls();
-        Debug.Log("Killing player..");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // It's should not be here
+                                                                          // But since we don't use it anywhere I just put it here
     }
 
     private void DisablePlayerControls()
