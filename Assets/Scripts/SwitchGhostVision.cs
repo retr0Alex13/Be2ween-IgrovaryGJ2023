@@ -21,7 +21,11 @@ public class SwitchGhostVision : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(characterController.velocity.magnitude);
+        HandleGhostVision();
+    }
+
+    private void HandleGhostVision()
+    {
         if (characterController.velocity.magnitude == 0)
         {
             timer += Time.deltaTime;
