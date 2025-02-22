@@ -1,4 +1,4 @@
-# Be2ween-IgrovaryGJ2023
+# Be2ween-IgrovaryGGJ2023
 **Be2ween** is a fun short game that I made for **Igrovary Summer Jam 2023!**
 Game end goal is to get to end of level. If you walked into trap or get caught by ghost level resets.
 
